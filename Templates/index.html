@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salay Assessment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background: #ffff;">
+<div class="login">
+    <h1>Salary prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Work_Experience" placeholder="Work_Experience" required="required" />
+        <input type="text" name="Test_score" placeholder="Test_score" required="required" />
+        <input type="text" name="Interview_score" placeholder="Interview_score" required="required" />
+
+
+        <button type="Click ME" class="btn btn-primary btn-block btn-large">"Click ME"</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
+
+</div>
+
+</body>
+</html>
